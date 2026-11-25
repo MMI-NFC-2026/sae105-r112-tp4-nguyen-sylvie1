@@ -1,19 +1,18 @@
 /**
 * Accordeon
 */
-
-detail {
-    
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
 }
 
-detail[open] {
-  animation: open 0.5s ease forwards;
+details {
+    transition: height 0.5s ease;
+    height: 2.5rem;
 }
-@keyframes open {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: var(--content-height);
-  }
+
+details[open] {
+    height: auto;
+    overflow: hidden;
 }
